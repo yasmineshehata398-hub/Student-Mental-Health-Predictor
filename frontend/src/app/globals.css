@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F7F4EC;
+  --foreground: #2D312E;
+}
+
+@theme {
+  --animate-float-icon: floatIcon 3.5s ease-in-out infinite;
+  
+  @keyframes floatIcon {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+  }
+}
+
+body {
+  background-color: #F7F4EC;
+  color: #2D312E;
+  font-family: var(--font-plus-jakarta), -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Soft Warm Shadows */
+.card-shadow {
+  box-shadow: 0 4px 20px -2px rgba(74, 62, 45, 0.04), 0 2px 6px -1px rgba(74, 62, 45, 0.02);
+}
+
+.input-warm {
+  background-color: #FAF8F5;
+  border: 1px solid #E6E0D4;
+  transition: all 0.2s ease;
+}
+
+.input-warm:focus {
+  background-color: #FFFFFF;
+  border-color: #4A7C59;
+  box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.12);
+  outline: none;
+}
+
+/* Custom Form Range Slider */
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #E8E2D5;
+  border-radius: 8px;
+  height: 6px;
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #4A7C59;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(74, 124, 89, 0.3);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: #3E684A;
+}
+
+input[type=range]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #4A7C59;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 6px rgba(74, 124, 89, 0.3);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+input[type=range]::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  background: #3E684A;
+}
+
+/* Smooth Transitions & Animations */
+.fade-in-slide {
+  animation: fadeInSlide 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInSlide {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.loading-pulse-ring {
+  animation: pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulseRing {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.85; }
+}
+
+select option {
+  background-color: #FAF8F5 !important;
+  color: #2D312E !important;
+}
