@@ -22,13 +22,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Paths to the model files
+# Paths to the model files (Directly inside backend directory)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_DIR = os.path.join(BASE_DIR, "..", "Student_Mental_Health")
-
-MODEL_PATH = os.path.join(MODEL_DIR, "random_forest_mental_health_model.pkl")
-ENCODER_PATH = os.path.join(MODEL_DIR, "label_encoder.pkl")
-FEATURES_PATH = os.path.join(MODEL_DIR, "feature_columns.pkl")
+MODEL_PATH = os.path.join(BASE_DIR, "random_forest_mental_health_model.pkl")
+ENCODER_PATH = os.path.join(BASE_DIR, "label_encoder.pkl")
+FEATURES_PATH = os.path.join(BASE_DIR, "feature_columns.pkl")
 
 # Load model, features and label encoder
 try:
